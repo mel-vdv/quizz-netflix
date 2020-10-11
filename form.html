@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>formulaire</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="form.css">
+</head>
+<body>
+	<p>
+		<form method="post" action="sql.php">
+			<h1> Crée ton compte! </h1>
+			<label for="pseudo"class="soulign">Pseudo: </label>
+			<input type="text" name="pseudo"id="pseudo"/></br></br></br>
+			<label for="pass"class="soulign">Mot de Passe: </label>
+			<input type="password" name="pass"id="pass"> </br></br></br>
+			<label for="date"class="soulign"> Date de naissance: </label>
+			<input type="date" name="date" id="date"/></br></br></br>
+			<label for="email"class="soulign">Email:</label>
+			<input type="email" name="email" id="email"/></br></br></br>
+			<label for="pays"class="soulign">Pays:</label>
+			<select name="pays"id="pays">
+				<option value="autre">Autre</option>
+				<option value="france">France</option>
+				<option value="belgique">Belgique</option>
+				<option value="suisse">Suisse</option>
+				<option value="luxembourg">Luxembourg</option>
+				<option value="canada">Canada</option>
+			</select></br></br></br>
+			<p class="soulign"> Sexe :</p>
+			<input type="radio" name="sexe" value="homme" id="homme"><label for="homme">Homme</label>
+			<input type="radio" name="sexe" value="femme" id="femme"><label for="femme">Femme</label>
+			<input type="radio" name="sexe" value="on s'en fiche" id="on s'en fiche"><label for="on s'en fiche">On s'en fiche</label></br></br></br>
+			<label for="addiction"class="soulign">Niveau d'addiction à Netflix:</label> </br>
+				0  
+			<input type="range" name="addict"id="addict">   10 </br></br></br>
+			<label class="soulign">Préférences de genres:</label> </br></br>
+			<input type="checkbox" name="policier" id="policier"><label for="policier">Policier prévisible, où l'on se rêve + malin que le FBI.</label></br></br></br>
+			<input type="checkbox" name="thriller_psy" id="thriller_psy"><label for="thriller_psy">Thriller Psy, à la fin duquel on télécharge le logiciel tor pour acheter un flingue sur le darknet.</label></br></br></br>
+			<input type="checkbox" name="dystop" id="dystop"><label for="dystop"> Dystopie en mode survie, du genre à nous donner envie de stocker des boites de conserve dans une cave redécorée pour l'occasion en bunker.</label></br></br></br>
+			<input type="checkbox" name="aaf"id="aaf"><label for="aaf">Amour Amitiés Famille, c'est bien. Avec un peu de trahison,c'est mieux. </label>
+			<input type="submit" name="envoyer">
+		</form>
+	</p>
+<p>
+	<?php
+	try{
+	$bdd = new PDO('mysql:host=localhost;port=3308;dbname=blog;charset=utf8', 'root', '');
+	}
+	catch(Exception $e){
+    die('Erreur : '.$e->getMessage());
+	}
+
+</p>
+</body>
+</html>

@@ -1,0 +1,15 @@
+
+
+body{
+	margin-left: 30%;
+	margin-right: 30%;
+	font-family: Georgia, serif;
+}
+h1{
+	border: 3px solid red;
+	text-align: center;
+	font-style: bold;
+}
+.soulign{
+	text-decoration:underline;
+}
